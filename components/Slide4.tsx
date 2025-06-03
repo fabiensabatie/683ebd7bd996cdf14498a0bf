@@ -1,63 +1,63 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TextBrick, HtmlBrick, EmptyBrick } from './bricks';
-import { ImageBrick, AudioBrick, DocumentBrick, ModelBrick, VideoBrick } from './bricks'; // DO NOT use the other brick components for content but KEEP their imports.
+import { ImageBrick, AudioBrick, DocumentBrick, ModelBrick, VideoBrick } from './bricks';
 
 function Slide4() {
   useEffect(() => {
     if (window.parent) {
       window.parent.postMessage({
         type: 'slideNavigation',
-        slideIndex: 4 // Use 1-based index for navigation
+        slideIndex: 4
       }, '*');
     }
   }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Implications and Future Research</h1>
-            <p className="text-sm text-gray-600">Interactive Course - Understanding AI-Driven Monitoring of Ground-Nesting Birds</p>
+            <p className="text-sm text-gray-600">Deliverable Content</p>
           </div>
           <div className="text-sm text-gray-500">
-            Slide 4 of 4
+            Section 4 of 4
           </div>
         </div>
       </header>
 
-      {/* Content Area */}
       <div className="max-w-6xl mx-auto p-6">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          
-      <EmptyBrick id="slide-4-top" />
-      <div className="text-center py-12">
-        <TextBrick variant="h1" className="mb-6">Implications and Future Research</TextBrick>
-        <EmptyBrick id="slide-4-title-below" />
-        <TextBrick className="text-lg mb-8">
-          Welcome to Understanding AI-Driven Monitoring of Ground-Nesting Birds! This slide is part of your interactive course.
-        </TextBrick>
-        <EmptyBrick id="slide-4-content-1" />
-        <div className="space-y-4">
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <TextBrick variant="h3" className="text-lg font-medium text-gray-800 mb-2">Add your content here</TextBrick>
-            <EmptyBrick id="slide-4-content-2" />
-            <TextBrick className="text-gray-600">You can edit this slide content in the editor or ask the AI assistant to help you create engaging educational content.</TextBrick>
-          </div>
-          <EmptyBrick id="slide-4-content-3" />
-        </div>
-      </div>
-      <EmptyBrick id="slide-4-bottom" />
-    
+          <EmptyBrick id="slide-4-top" />
+          <TextBrick variant="h2">Discussion on Implications</TextBrick>
+          <TextBrick variant="p">
+            This study highlights the significant role of AI in enhancing conservation practices,
+            particularly in the monitoring of ground-nesting birds. By employing advanced algorithms
+            such as YOLOv10, we can achieve real-time detection and analysis, leading to more informed
+            conservation strategies.
+          </TextBrick>
+          <EmptyBrick id="slide-4-space-1" />
+          <TextBrick variant="h3">Future Research Directions</TextBrick>
+          <TextBrick variant="p">
+            Future research should focus on expanding AI applications in diverse ecosystems,
+            examining how these technologies can influence policy decisions, and ensuring that
+            the insights gained are integrated into effective conservation frameworks.
+          </TextBrick>
+          <EmptyBrick id="slide-4-space-2" />
+          <HtmlBrick>
+            <ul>
+              <li>Integration of AI in policy-making processes</li>
+              <li>Long-term monitoring of bird populations</li>
+              <li>Collaboration between technologists and conservationists</li>
+            </ul>
+          </HtmlBrick>
+          <EmptyBrick id="slide-4-bottom" />
         </div>
       </div>
 
-      {/* Navigation */}
       <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2">
         <div className="bg-white rounded-full shadow-lg px-6 py-3 flex items-center space-x-4">
-          
           <Link 
             to="/slide/3" 
             className="flex items-center space-x-2 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors"
@@ -67,7 +67,6 @@ function Slide4() {
             </svg>
             <span>Previous</span>
           </Link>
-          
           <Link 
             to="/" 
             className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
