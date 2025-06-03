@@ -4,7 +4,7 @@ import Game from './Game'
 import Overlay from './Overlay'
 import { Leva } from 'leva'
 
-export default function App() {
+export default function FpsGame() {
   return (
     <>
       <Canvas shadows>
