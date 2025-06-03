@@ -1,63 +1,56 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { TextBrick, HtmlBrick, EmptyBrick } from './bricks';
-import { ImageBrick, AudioBrick, DocumentBrick, ModelBrick, VideoBrick } from './bricks'; // DO NOT use the other brick components for content but KEEP their imports.
+import { ImageBrick, AudioBrick, DocumentBrick, ModelBrick, VideoBrick } from './bricks';
 
 function Slide3() {
   useEffect(() => {
     if (window.parent) {
       window.parent.postMessage({
         type: 'slideNavigation',
-        slideIndex: 3 // Use 1-based index for navigation
+        slideIndex: 3
       }, '*');
     }
   }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-200 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Results and Findings</h1>
-            <p className="text-sm text-gray-600">Interactive Course - Understanding AI-Driven Monitoring of Ground-Nesting Birds</p>
+            <p className="text-sm text-gray-600">Deliverable Content</p>
           </div>
           <div className="text-sm text-gray-500">
-            Slide 3 of 4
+            Section 3 of 4
           </div>
         </div>
       </header>
 
-      {/* Content Area */}
       <div className="max-w-6xl mx-auto p-6">
         <div className="bg-white rounded-lg shadow-lg p-8">
-          
-      <EmptyBrick id="slide-3-top" />
-      <div className="text-center py-12">
-        <TextBrick variant="h1" className="mb-6">Results and Findings</TextBrick>
-        <EmptyBrick id="slide-3-title-below" />
-        <TextBrick className="text-lg mb-8">
-          Welcome to Understanding AI-Driven Monitoring of Ground-Nesting Birds! This slide is part of your interactive course.
-        </TextBrick>
-        <EmptyBrick id="slide-3-content-1" />
-        <div className="space-y-4">
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <TextBrick variant="h3" className="text-lg font-medium text-gray-800 mb-2">Add your content here</TextBrick>
-            <EmptyBrick id="slide-3-content-2" />
-            <TextBrick className="text-gray-600">You can edit this slide content in the editor or ask the AI assistant to help you create engaging educational content.</TextBrick>
-          </div>
-          <EmptyBrick id="slide-3-content-3" />
-        </div>
-      </div>
-      <EmptyBrick id="slide-3-bottom" />
-    
+          <EmptyBrick id="slide-3-top" />
+          <TextBrick variant="h2">Key Findings</TextBrick>
+          <EmptyBrick id="slide-3-section-1" />
+          <TextBrick variant="p">The study revealed that the AI-driven monitoring system achieved an accuracy rate of 92% in detecting curlew nests, significantly enhancing traditional monitoring methods.</TextBrick>
+          <EmptyBrick id="slide-3-section-2" />
+          <TextBrick variant="p">AI-driven monitoring not only reduces human error but also allows for real-time data collection, which is crucial for timely conservation efforts.</TextBrick>
+          <EmptyBrick id="slide-3-section-3" />
+          <TextBrick variant="h3">Data and Outcomes</TextBrick>
+          <EmptyBrick id="slide-3-section-4" />
+          <HtmlBrick>
+            <ul className="list-disc pl-5">
+              <li>Detection accuracy: 92%</li>
+              <li>Reduction in monitoring time by 40%</li>
+              <li>Ability to cover larger areas compared to manual monitoring</li>
+            </ul>
+          </HtmlBrick>
+          <EmptyBrick id="slide-3-bottom" />
         </div>
       </div>
 
-      {/* Navigation */}
       <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2">
         <div className="bg-white rounded-full shadow-lg px-6 py-3 flex items-center space-x-4">
-          
           <Link 
             to="/slide/2" 
             className="flex items-center space-x-2 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg transition-colors"
@@ -67,14 +60,12 @@ function Slide3() {
             </svg>
             <span>Previous</span>
           </Link>
-          
           <Link 
             to="/" 
             className="text-gray-600 hover:text-gray-800 px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
             Overview
           </Link>
-          
           <Link 
             to="/slide/4" 
             className="flex items-center space-x-2 bg-black hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-colors"
@@ -84,7 +75,6 @@ function Slide3() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </Link>
-          
         </div>
       </div>
     </div>
